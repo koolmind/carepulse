@@ -15,7 +15,7 @@ export const createUser = async (user: CreateUserParams) => {
       undefined, // password is not needed
       user.name
     );
-    return parseStringify(newUser);
+    return parseStringify({ newUser });
   } catch (error: any) {
     if (error && error?.code === 409) {
       // utente già presente nel DB. Lo recupero e lo ritorno
